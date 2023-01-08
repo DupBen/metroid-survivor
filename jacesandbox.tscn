@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://s7i76801vs4i"]
+[gd_scene load_steps=4 format=3 uid="uid://s7i76801vs4i"]
 
-[ext_resource type="Texture2D" uid="uid://bsw7ay7e8cuw3" path="res://src/assets/NES - Metroid - Kraids Lair.png" id="1_5n65i"]
-[ext_resource type="PackedScene" uid="uid://dtafijkcfxte3" path="res://src/character/samus.tscn" id="2_edw3i"]
+[ext_resource type="Texture2D" uid="uid://bsw7ay7e8cuw3" path="res://src/assets/NES - Metroid - Kraids Lair.png" id="1_a4ajm"]
+[ext_resource type="PackedScene" uid="uid://dtafijkcfxte3" path="res://src/character/samus.tscn" id="2_jpfqv"]
+[ext_resource type="PackedScene" uid="uid://lwexx3hkft0b" path="res://src/enemies/zoomer/Zoomer.tscn" id="3_82h5h"]
 
 [node name="Sandbox" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1128, 608)
-texture = ExtResource("1_5n65i")
+texture = ExtResource("1_a4ajm")
 
-[node name="Samus" parent="." instance=ExtResource("2_edw3i")]
+[node name="Samus" parent="." instance=ExtResource("2_jpfqv")]
 position = Vector2(176, 72)
 
 [node name="Camera2D" type="Camera2D" parent="Samus"]
 current = true
+
+[node name="Zoomer" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(200, 88)

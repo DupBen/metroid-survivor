@@ -3,16 +3,21 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 
-func _physics_process(delta: float) -> void:
-	move(delta)
+@onready var sprite := $Sprite2D
 
-func move(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	move()
+
+
+func move() -> void:
 	var direction := Vector2.ZERO
-	direction.x = Input.get_axis("ui_left", "ui_right")
-	direction.y = Input.get_axis("ui_up", "ui_down")
-	if direction:
-		velocity = direction * SPEED
+	direction.x = Input.get_axis("left", "right")
+	direction.y = Input.get_axis("up", "down")
+	velocity = direction.normalized() * SPEED
+	
+	if direction.x > 0: 
+		sprite.flip_h = false
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		sprite.flip_h = true
 
-	move_and_collide(velocity * delta)
+	move_and_slide()
