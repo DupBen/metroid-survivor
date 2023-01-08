@@ -8,8 +8,48 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"Character",
+"language": &"GDScript",
+"path": "res://src/character/character.gd"
+}, {
+"base": "Character",
+"class": &"Samus",
+"language": &"GDScript",
+"path": "res://src/character/samus.gd"
+}]
+_global_script_class_icons={
+"Character": "",
+"Samus": ""
+}
+
 [application]
 
 config/name="Metroid Survivor"
+run/main_scene="res://jacesandbox.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=288
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="character"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="projectile"
+2d_physics/layer_5="enemy_projectile"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

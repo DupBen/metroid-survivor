@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtafijkcfxte3"]
+
+[ext_resource type="Script" path="res://src/character/samus.gd" id="1_de1i8"]
+[ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="1_qwfog"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ag6s2"]
+radius = 16.0
+
+[node name="Samus" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_de1i8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qwfog")
+hframes = 31
+vframes = 29
+frame = 112
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
+shape = SubResource("CircleShape2D_ag6s2")

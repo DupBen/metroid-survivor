@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://s7i76801vs4i"]
+
+[ext_resource type="Texture2D" uid="uid://bsw7ay7e8cuw3" path="res://src/assets/NES - Metroid - Kraids Lair.png" id="1_5n65i"]
+[ext_resource type="PackedScene" uid="uid://dtafijkcfxte3" path="res://src/character/samus.tscn" id="2_edw3i"]
+
+[node name="Sandbox" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1128, 608)
+texture = ExtResource("1_5n65i")
+
+[node name="Samus" parent="." instance=ExtResource("2_edw3i")]
+position = Vector2(176, 72)
+
+[node name="Camera2D" type="Camera2D" parent="Samus"]
+current = true
