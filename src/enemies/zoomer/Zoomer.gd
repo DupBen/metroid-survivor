@@ -4,6 +4,6 @@ extends Enemy
 @onready var collision_shape : CircleShape2D = $CollisionShape2D.shape
 
 
-func _move(delta: float) -> void:
+func _move(_delta: float) -> void:
 	pass
 

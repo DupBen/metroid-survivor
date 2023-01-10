@@ -6,6 +6,7 @@
 script = ExtResource("1_ms0e2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0, 1, 0, 0.419608)
 
 [node name="IFramesTimer" type="Timer" parent="."]
 wait_time = 0.5
