@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://lwexx3hkft0b"]
+[gd_scene load_steps=13 format=3 uid="uid://lwexx3hkft0b"]
 
 [ext_resource type="Script" path="res://src/enemies/zoomer/Zoomer.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cg3p5xhh3d6j3" path="res://src/enemies/zoomer/zoomer.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b3ti84prpjrfp" path="res://src/components/hit_box.tscn" id="3_3127v"]
 
 [sub_resource type="AtlasTexture" id="3"]
 atlas = ExtResource("3")
@@ -38,6 +39,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ef1af"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_epp22"]
+
 [node name="Zoomer" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 0
@@ -50,4 +53,16 @@ playing = true
 offset = Vector2(0, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_ef1af")
+
+[node name="HitBox" parent="." instance=ExtResource("3_3127v")]
+position = Vector2(0, 0)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+modulate = Color(0.945098, 0, 0.231373, 1)
+shape = SubResource("CircleShape2D_epp22")
+
+[editable path="HitBox"]

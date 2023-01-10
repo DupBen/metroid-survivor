@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtafijkcfxte3"]
+[gd_scene load_steps=6 format=3 uid="uid://dtafijkcfxte3"]
 
 [ext_resource type="Script" path="res://src/character/samus.gd" id="1_de1i8"]
 [ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="1_qwfog"]
+[ext_resource type="PackedScene" uid="uid://dbru3388du004" path="res://src/components/hurt_box.tscn" id="3_26ts8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ag6s2"]
 radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_faqq0"]
 
 [node name="Samus" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -20,3 +23,13 @@ frame = 159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ag6s2")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_26ts8")]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+scale = Vector2(0.559999, 1.56)
+shape = SubResource("CircleShape2D_faqq0")
+
+[editable path="HurtBox"]

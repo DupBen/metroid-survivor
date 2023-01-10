@@ -20,6 +20,16 @@ _global_script_classes=[{
 "path": "res://src/enemies/Enemy.gd"
 }, {
 "base": "Area2D",
+"class": &"HitBox",
+"language": &"GDScript",
+"path": "res://src/components/hit_box.gd"
+}, {
+"base": "Area2D",
+"class": &"HurtBox",
+"language": &"GDScript",
+"path": "res://src/components/hurt_box.gd"
+}, {
+"base": "Area2D",
 "class": &"Pickup",
 "language": &"GDScript",
 "path": "res://src/pickups/Pickup.gd"
@@ -37,6 +47,8 @@ _global_script_classes=[{
 _global_script_class_icons={
 "Character": "",
 "Enemy": "",
+"HitBox": "",
+"HurtBox": "",
 "Pickup": "",
 "Samus": "",
 "Zoomer": ""
@@ -53,10 +65,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/borderless=true
 window/size/always_on_top=true
-window/size/window_width_override=2560
-window/size/window_height_override=1440
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 
@@ -92,8 +103,10 @@ right={
 2d_physics/layer_1="world"
 2d_physics/layer_2="character"
 2d_physics/layer_3="enemy"
-2d_physics/layer_4="projectile"
-2d_physics/layer_5="enemy_projectile"
+2d_physics/layer_5="character hurtbox"
+2d_physics/layer_6="weapon hitbox"
+2d_physics/layer_7="enemy hurtbox"
+2d_physics/layer_8="enemy hitbox"
 
 [rendering]
 
