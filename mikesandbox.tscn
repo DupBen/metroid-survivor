@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dneqqjdae1pnr"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Texture2D" uid="uid://bsw7ay7e8cuw3" path="res://src/assets/NES - Metroid - Kraids Lair.png" id="1_5n65i"]
-[ext_resource type="PackedScene" uid="uid://dtafijkcfxte3" path="res://src/character/samus.tscn" id="2_edw3i"]
-[ext_resource type="PackedScene" uid="uid://b3ti84prpjrfp" path="res://src/components/hit_box.tscn" id="3_5dluy"]
-[ext_resource type="PackedScene" uid="uid://dbru3388du004" path="res://src/components/hurt_box.tscn" id="4_tkdnb"]
+[ext_resource type="PackedScene" path="res://src/character/samus.tscn" id="2_edw3i"]
+[ext_resource type="PackedScene" uid="uid://b3ti84prpjrfp" path="res://src/components/Hitbox.tscn" id="3_5dluy"]
+[ext_resource type="PackedScene" uid="uid://cg1dfpwf55mwj" path="res://src/components/Hurtbox.tscn" id="4_tkdnb"]
 
 [node name="Sandbox" type="Node2D"]
 

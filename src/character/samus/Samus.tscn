@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv0hb2ecqufkf"]
+
+[ext_resource type="Script" path="res://src/character/samus/Samus.gd" id="1_hn77h"]
+[ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="2_ugpua"]
+[ext_resource type="PackedScene" uid="uid://cg1dfpwf55mwj" path="res://src/components/Hurtbox.tscn" id="3_pshqb"]
+[ext_resource type="PackedScene" uid="uid://06qnv6lr4cj0" path="res://src/components/Health.tscn" id="4_eo610"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ota4"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ltfe"]
+
+[node name="Samus" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_hn77h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ugpua")
+hframes = 45
+vframes = 29
+frame = 159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_5ota4")
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_pshqb")]
+collision_layer = 0
+collision_mask = 4
+health = NodePath("../Health")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_0ltfe")
+
+[node name="Health" parent="." instance=ExtResource("4_eo610")]
+health = 100
+
+[editable path="Hurtbox"]

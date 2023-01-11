@@ -9,46 +9,40 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "CharacterBody2D",
-"class": &"Character",
+"base": "Node2D",
+"class": &"Health",
 "language": &"GDScript",
-"path": "res://src/character/character.gd"
-}, {
-"base": "CharacterBody2D",
-"class": &"Enemy",
-"language": &"GDScript",
-"path": "res://src/enemies/Enemy.gd"
+"path": "res://src/components/Health.gd"
 }, {
 "base": "Area2D",
-"class": &"HitBox",
+"class": &"Hitbox",
 "language": &"GDScript",
-"path": "res://src/components/hit_box.gd"
+"path": "res://src/components/Hitbox.gd"
 }, {
 "base": "Area2D",
-"class": &"HurtBox",
+"class": &"Hurtbox",
 "language": &"GDScript",
-"path": "res://src/components/hurt_box.gd"
+"path": "res://src/components/Hurtbox.gd"
 }, {
 "base": "Area2D",
 "class": &"Pickup",
 "language": &"GDScript",
 "path": "res://src/pickups/Pickup.gd"
 }, {
-"base": "Character",
+"base": "CharacterBody2D",
 "class": &"Samus",
 "language": &"GDScript",
-"path": "res://src/character/samus/samus.gd"
+"path": "res://src/character/samus/Samus.gd"
 }, {
-"base": "Enemy",
+"base": "CharacterBody2D",
 "class": &"Zoomer",
 "language": &"GDScript",
 "path": "res://src/enemies/zoomer/Zoomer.gd"
 }]
 _global_script_class_icons={
-"Character": "",
-"Enemy": "",
-"HitBox": "",
-"HurtBox": "",
+"Health": "",
+"Hitbox": "",
+"Hurtbox": "",
 "Pickup": "",
 "Samus": "",
 "Zoomer": ""
@@ -60,6 +54,13 @@ config/name="Metroid Survivor"
 run/main_scene="res://jacesandbox.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=1
 
 [display]
 
@@ -103,10 +104,8 @@ right={
 2d_physics/layer_1="world"
 2d_physics/layer_2="character"
 2d_physics/layer_3="enemy"
-2d_physics/layer_5="character_hurtbox"
-2d_physics/layer_6="weapon_hitbox"
+2d_physics/layer_6="character_hurtbox"
 2d_physics/layer_7="enemy_hurtbox"
-2d_physics/layer_8="enemy_hitbox"
 
 [rendering]
 

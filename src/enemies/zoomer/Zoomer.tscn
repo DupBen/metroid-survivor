@@ -1,37 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://lwexx3hkft0b"]
+[gd_scene load_steps=8 format=3 uid="uid://bart6frkjgsiy"]
 
 [ext_resource type="Script" path="res://src/enemies/zoomer/Zoomer.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cg3p5xhh3d6j3" path="res://src/enemies/zoomer/zoomer.png" id="3"]
-[ext_resource type="PackedScene" uid="uid://b3ti84prpjrfp" path="res://src/components/hit_box.tscn" id="3_3127v"]
-[ext_resource type="PackedScene" uid="uid://dbru3388du004" path="res://src/components/hurt_box.tscn" id="3_cm8ek"]
-
-[sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("3")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="6"]
-atlas = ExtResource("3")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="7"]
-atlas = ExtResource("3")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="8"]
-atlas = ExtResource("3")
-region = Rect2(160, 0, 32, 32)
+[ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="3_3127v"]
+[ext_resource type="PackedScene" uid="uid://cg1dfpwf55mwj" path="res://src/components/Hurtbox.tscn" id="3_cm8ek"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am7jn"]
 animations = [{
-"frames": [SubResource("3"), SubResource("4"), SubResource("5"), SubResource("6"), SubResource("7"), SubResource("8")],
+"frames": [null, null, null, null, null, null],
 "loop": true,
 "name": &"default",
 "speed": 6.0
@@ -61,7 +36,7 @@ shape = SubResource("CircleShape2D_ef1af")
 
 [node name="HurtBox" parent="." instance=ExtResource("3_cm8ek")]
 visible = false
-collision_layer = 0
+collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
@@ -69,8 +44,8 @@ shape = SubResource("CircleShape2D_7dids")
 
 [node name="HitBox" parent="." instance=ExtResource("3_3127v")]
 position = Vector2(0, 0)
-collision_layer = 128
-collision_mask = 0
+collision_layer = 4
+collision_mask = 32
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_3jjdx")

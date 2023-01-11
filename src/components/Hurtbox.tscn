@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg1dfpwf55mwj"]
+
+[ext_resource type="Script" path="res://src/components/Hurtbox.gd" id="1_pokcw"]
+
+[node name="Hurtbox" type="Area2D"]
+script = ExtResource("1_pokcw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0, 1, 0, 0.419608)
+
+[node name="IFramesTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="IFramesTimer" to="." method="_on_i_frames_timer_timeout"]
