@@ -6,7 +6,7 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am7jn"]
 animations = [{
-"frames": [null, null, null, null, null, null],
+"frames": [],
 "loop": true,
 "name": &"default",
 "speed": 6.0

@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ota4"]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0ltfe"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ai536"]
 
 [node name="Samus" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -25,15 +25,15 @@ frame = 159
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_5ota4")
 
+[node name="Health" parent="." instance=ExtResource("4_eo610")]
+health = 100
+
 [node name="Hurtbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_pshqb")]
-collision_layer = 0
+collision_layer = 32
 collision_mask = 4
 health = NodePath("../Health")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-shape = SubResource("CircleShape2D_0ltfe")
-
-[node name="Health" parent="." instance=ExtResource("4_eo610")]
-health = 100
+shape = SubResource("CircleShape2D_ai536")
 
 [editable path="Hurtbox"]

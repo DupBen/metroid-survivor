@@ -1,13 +1,13 @@
 class_name Samus
 extends CharacterBody2D
 
-const SPEED = 50.0
+
+const SPEED := 50.0
 
 @export var armor := 5
 
-
-@onready var sprite : Sprite2D = $Sprite2D
-@onready var hurtbox : Hurtbox = $Hurtbox
+@onready var sprite := $Sprite2D as Sprite2D
+@onready var hurtbox := $Hurtbox as Hurtbox
 
 
 func _ready() -> void:

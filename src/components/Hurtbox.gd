@@ -1,25 +1,27 @@
 @tool
 class_name Hurtbox
 extends Area2D
+
+
 signal damage(amount)
 
 @export var health : Health
-@onready var collison : CollisionShape2D = $CollisionShape2D
-@onready var timer : Timer = $IFramesTimer
 
-# Called when the node enters the scene tree for the first time.
+@onready var collison := $CollisionShape2D as CollisionShape2D
+@onready var timer := $IFramesTimer as Timer
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:
 	pass
-	
-	
+
+
 func _get_configuration_warnings():
 	var warnings := PackedStringArray([])
-	if not health:
+	if not health is Health:
 		warnings.append("%s requires a Health component to which to apply damage. Please add one in the inspector." % name)
 	return warnings
 
