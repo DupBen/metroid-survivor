@@ -1,12 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://bart6frkjgsiy"]
+[gd_scene load_steps=16 format=3 uid="uid://bart6frkjgsiy"]
 
 [ext_resource type="Script" path="res://src/enemies/zoomer/Zoomer.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cg3p5xhh3d6j3" path="res://src/enemies/zoomer/zoomer.png" id="2_km50b"]
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="3_3127v"]
 [ext_resource type="PackedScene" uid="uid://cg1dfpwf55mwj" path="res://src/components/Hurtbox.tscn" id="3_cm8ek"]
+[ext_resource type="PackedScene" uid="uid://06qnv6lr4cj0" path="res://src/components/Health.tscn" id="5_r6fo5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uei3x"]
+atlas = ExtResource("2_km50b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0jmt"]
+atlas = ExtResource("2_km50b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8k0f"]
+atlas = ExtResource("2_km50b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4nqa"]
+atlas = ExtResource("2_km50b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5q7k"]
+atlas = ExtResource("2_km50b")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viofr"]
+atlas = ExtResource("2_km50b")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am7jn"]
 animations = [{
-"frames": [],
+"frames": [SubResource("AtlasTexture_uei3x"), SubResource("AtlasTexture_a0jmt"), SubResource("AtlasTexture_o8k0f"), SubResource("AtlasTexture_c4nqa"), SubResource("AtlasTexture_s5q7k"), SubResource("AtlasTexture_viofr")],
 "loop": true,
 "name": &"default",
 "speed": 6.0
@@ -34,21 +60,28 @@ offset = Vector2(0, 1.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ef1af")
 
-[node name="HurtBox" parent="." instance=ExtResource("3_cm8ek")]
+[node name="HurtBox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_cm8ek")]
 visible = false
 collision_layer = 64
-collision_mask = 0
+collision_mask = 8
+health = NodePath("../Health")
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource("CircleShape2D_7dids")
 
 [node name="HitBox" parent="." instance=ExtResource("3_3127v")]
+visible = false
 position = Vector2(0, 0)
 collision_layer = 4
 collision_mask = 32
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_3jjdx")
+
+[node name="Health" parent="." instance=ExtResource("5_r6fo5")]
+health = 1
+
+[connection signal="died" from="Health" to="." method="_on_health_died"]
 
 [editable path="HurtBox"]
 [editable path="HitBox"]
