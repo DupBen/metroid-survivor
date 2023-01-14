@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bsw7ay7e8cuw3" path="res://src/assets/NES - Metroid - Kraids Lair.png" id="1_a4ajm"]
 [ext_resource type="PackedScene" uid="uid://bv0hb2ecqufkf" path="res://src/character/samus/Samus.tscn" id="2_xw62k"]
 [ext_resource type="PackedScene" uid="uid://bart6frkjgsiy" path="res://src/enemies/zoomer/Zoomer.tscn" id="3_82h5h"]
-[ext_resource type="PackedScene" uid="uid://cjirv0x5i748x" path="res://src/weapons/Beam.tscn" id="4_87kn3"]
+[ext_resource type="PackedScene" uid="uid://b2qmo4kk272mg" path="res://src/weapons/BeamCannon.tscn" id="3_jpsjh"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -17,6 +17,8 @@ position = Vector2(169, 97)
 [node name="SamusCamera2D" type="Camera2D" parent="Samus"]
 current = true
 
+[node name="BeamCannon" parent="Samus" instance=ExtResource("3_jpsjh")]
+
 [node name="Zoomer" parent="." instance=ExtResource("3_82h5h")]
 position = Vector2(268, 88)
 
@@ -25,6 +27,3 @@ position = Vector2(306, 88)
 
 [node name="Zoomer3" parent="." instance=ExtResource("3_82h5h")]
 position = Vector2(345, 88)
-
-[node name="Beam" parent="." instance=ExtResource("4_87kn3")]
-position = Vector2(203, 89)

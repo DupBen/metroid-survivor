@@ -10,11 +10,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if max_collisions <= 0: 
-		emit_signal("max_collisions_reached")
-
-
 func _on_area_entered(area: Area2D) -> void:
 	max_collisions -= 1
+	if max_collisions <= 0: 
+		emit_signal("max_collisions_reached")

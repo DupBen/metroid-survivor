@@ -8,10 +8,15 @@ const SPEED := 50.0
 
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var hurtbox := $Hurtbox as Hurtbox
-
+var face_direction := Vector2.RIGHT
+var weapons = []
+var passives = []
+const beam_cannon = preload("res://src/weapons/BeamCannon.tscn")
 
 func _ready() -> void:
-	pass
+	weapons.append(beam_cannon)
+	for weapon in weapons:
+		add_child(weapon.instantiate())
 
 
 func _physics_process(_delta: float) -> void:
@@ -24,15 +29,18 @@ func move() -> void:
 	direction.y = Input.get_axis("up", "down")
 	velocity = direction.normalized() * SPEED
 	
-	face_direction()
+	check_face_direction()
 	move_and_slide()
 
 
-func face_direction() -> void:
-	var direction := Vector2.ZERO
-	direction.x = Input.get_axis("left", "right")
-	if direction.x > 0: 
+func check_face_direction() -> void:
+	var input_direction = Input.get_axis("left", "right")
+	if input_direction > 0: 
 		sprite.flip_h = false
-	if direction.x < 0:
+		face_direction = Vector2.RIGHT
+	if input_direction < 0:
 		sprite.flip_h = true
-
+		face_direction = Vector2.LEFT
+ 
+func fire():
+	pass
