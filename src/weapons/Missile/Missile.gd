@@ -1,16 +1,11 @@
-class_name Beam
+class_name Missile
 extends Area2D
 
 var speed := 250
 var direction: Vector2
 var velocity := Vector2.ZERO
-var beam_distance := 0.15
-var long_beam_distance := 0.5
-
 
 func _ready() -> void:
-	#rotation = direction.angle()
-	#Globals.GameSFX.play(Globals.sfx['beam'])
 	pass
 
 
