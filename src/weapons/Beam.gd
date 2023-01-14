@@ -1,13 +1,11 @@
+class_name Beam
 extends Area2D
 
-const SPEED := 250
+var speed := 50
 var direction: Vector2
-
 var velocity := Vector2.ZERO
 var beam_distance := 0.15
 var long_beam_distance := 0.5
-
-@onready var timer := $Timer
 
 
 func _ready() -> void:
@@ -17,8 +15,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta) -> void:
-	velocity.x = direction.x * SPEED * delta
-	velocity.y = direction.y * SPEED * delta
+	velocity.x = direction.x * speed * delta
+	velocity.y = direction.y * speed * delta
 	translate(velocity)
 
 

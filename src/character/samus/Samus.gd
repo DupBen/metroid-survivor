@@ -3,15 +3,16 @@ extends CharacterBody2D
 
 
 const SPEED := 50.0
+const beam_cannon = preload("res://src/weapons/BeamCannon.tscn")
 
 @export var armor := 5
 
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var hurtbox := $Hurtbox as Hurtbox
+
 var face_direction := Vector2.RIGHT
 var weapons = []
 var passives = []
-const beam_cannon = preload("res://src/weapons/BeamCannon.tscn")
 
 func _ready() -> void:
 	weapons.append(beam_cannon)
@@ -29,12 +30,11 @@ func move() -> void:
 	direction.y = Input.get_axis("up", "down")
 	velocity = direction.normalized() * SPEED
 	
-	check_face_direction()
+	check_face_direction(direction.x)
 	move_and_slide()
 
 
-func check_face_direction() -> void:
-	var input_direction = Input.get_axis("left", "right")
+func check_face_direction(input_direction) -> void:
 	if input_direction > 0: 
 		sprite.flip_h = false
 		face_direction = Vector2.RIGHT

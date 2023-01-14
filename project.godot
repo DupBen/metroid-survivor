@@ -9,6 +9,16 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Area2D",
+"class": &"Beam",
+"language": &"GDScript",
+"path": "res://src/weapons/Beam.gd"
+}, {
+"base": "Node2D",
+"class": &"BeamCannon",
+"language": &"GDScript",
+"path": "res://src/weapons/BeamCannon.gd"
+}, {
 "base": "Node2D",
 "class": &"Health",
 "language": &"GDScript",
@@ -40,6 +50,8 @@ _global_script_classes=[{
 "path": "res://src/enemies/zoomer/Zoomer.gd"
 }]
 _global_script_class_icons={
+"Beam": "",
+"BeamCannon": "",
 "Health": "",
 "Hitbox": "",
 "Hurtbox": "",
