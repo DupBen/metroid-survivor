@@ -1,13 +1,56 @@
-[gd_scene load_steps=9 format=3 uid="uid://bart6frkjgsiy"]
+[gd_scene load_steps=16 format=3 uid="uid://bart6frkjgsiy"]
 
 [ext_resource type="Script" path="res://src/enemies/zoomer/Zoomer.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cg3p5xhh3d6j3" path="res://src/enemies/zoomer/zoomer.png" id="2_xgx0y"]
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="3_3127v"]
 [ext_resource type="PackedScene" uid="uid://cg1dfpwf55mwj" path="res://src/components/Hurtbox.tscn" id="3_cm8ek"]
 [ext_resource type="PackedScene" uid="uid://06qnv6lr4cj0" path="res://src/components/Health.tscn" id="5_r6fo5"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_67ssi"]
+atlas = ExtResource("2_xgx0y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4eog"]
+atlas = ExtResource("2_xgx0y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epgov"]
+atlas = ExtResource("2_xgx0y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yljhf"]
+atlas = ExtResource("2_xgx0y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n41j7"]
+atlas = ExtResource("2_xgx0y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs7aj"]
+atlas = ExtResource("2_xgx0y")
+region = Rect2(160, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_am7jn"]
 animations = [{
-"frames": [null, null, null, null, null, null],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67ssi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epgov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yljhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n41j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs7aj")
+}],
 "loop": true,
 "name": &"default",
 "speed": 6.0

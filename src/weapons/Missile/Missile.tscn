@@ -1,14 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://i73gpm2vew4d"]
+[gd_scene load_steps=6 format=3 uid="uid://i73gpm2vew4d"]
 
 [ext_resource type="Script" path="res://src/weapons/Missile/Missile.gd" id="1_sklxj"]
 [ext_resource type="Texture2D" uid="uid://dbira7gu6xnrm" path="res://src/assets/sprites/missile.png" id="2_hv8m2"]
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="2_r60kt"]
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x7o44"]
-radius = 4.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_knf58"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_awo58"]
 radius = 4.0
 
 [node name="Missile" type="Area2D"]
@@ -22,21 +19,17 @@ texture = ExtResource("2_hv8m2")
 
 [node name="HitBox" parent="." instance=ExtResource("2_r60kt")]
 position = Vector2(0, 0)
-collision_layer = 8
-collision_mask = 64
+collision_layer = 32
+damage = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_x7o44")
+shape = SubResource("CircleShape2D_awo58")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="CollisionCounter" parent="." instance=ExtResource("4_0rvvk")]
-collision_layer = 8
-collision_mask = 65
-max_collisions = 2
-
-[node name="CollisionShape2D" parent="CollisionCounter" index="0"]
-shape = SubResource("CircleShape2D_knf58")
+[node name="CollisionCounter" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("4_0rvvk")]
+hitbox = NodePath("../HitBox")
+collision_mask = 128
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="max_collisions_reached" from="CollisionCounter" to="." method="_on_collision_counter_max_collisions_reached"]
