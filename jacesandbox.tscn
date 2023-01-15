@@ -17,10 +17,10 @@ position = Vector2(169, 97)
 current = true
 
 [node name="Zoomer" parent="." instance=ExtResource("3_82h5h")]
-position = Vector2(258, 142)
+position = Vector2(239, 95)
 
 [node name="Zoomer2" parent="." instance=ExtResource("3_82h5h")]
-position = Vector2(308, 30)
+position = Vector2(335, 96)
 
 [node name="Zoomer3" parent="." instance=ExtResource("3_82h5h")]
-position = Vector2(229, 23)
+position = Vector2(431, 97)

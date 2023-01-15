@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ef1af"]
-radius = 6.0
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7dids"]
 
@@ -79,25 +79,22 @@ offset = Vector2(0, 1.5)
 shape = SubResource("CircleShape2D_ef1af")
 
 [node name="HurtBox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_cm8ek")]
-visible = false
-collision_layer = 64
-collision_mask = 8
+collision_layer = 128
+collision_mask = 32
 health = NodePath("../Health")
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource("CircleShape2D_7dids")
 
 [node name="HitBox" parent="." instance=ExtResource("3_3127v")]
-visible = false
 position = Vector2(0, 0)
-collision_layer = 4
-collision_mask = 32
+collision_layer = 64
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_3jjdx")
 
 [node name="Health" parent="." instance=ExtResource("5_r6fo5")]
-health = 1
+health = 2
 
 [connection signal="died" from="Health" to="." method="_on_health_died"]
 

@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	move()
+#	print($Health.health)
 
 
 func move() -> void:

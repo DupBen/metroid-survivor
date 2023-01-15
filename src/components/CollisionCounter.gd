@@ -1,16 +1,31 @@
-extends Area2D
+@tool
+extends Node2D
 
 
 signal max_collisions_reached
 
 @export var max_collisions := 1
+@export var hitbox : Hitbox
+@export_flags_2d_physics var collision_mask
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if hitbox is Hitbox:
+		hitbox.area_entered.connect(_on_hitbox_area_entered)
+		hitbox.collision_mask += collision_mask
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _get_configuration_warnings():
+	var warnings := PackedStringArray([])
+	if not hitbox is Hitbox:
+		warnings.append("%s requires a Hitbox to check for collisions. Please add one in the inspector." % name)
+	return warnings
+
+
+func _on_hitbox_area_entered(hurtbox: Hurtbox) -> void:
+	if not hurtbox:
+		return
 	max_collisions -= 1
 	if max_collisions <= 0: 
 		emit_signal("max_collisions_reached")
+

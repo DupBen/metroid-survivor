@@ -1,7 +1,7 @@
 class_name BeamCannon
 extends Node2D
 
-@export var fire_rate := 0.25
+@export var fire_rate := 0.75
 
 @onready var beam = preload("res://src/weapons/Beam.tscn")
 @onready var timer = $Timer

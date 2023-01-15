@@ -116,9 +116,10 @@ right={
 2d_physics/layer_1="world"
 2d_physics/layer_2="character"
 2d_physics/layer_3="enemy"
-2d_physics/layer_4="weapons"
-2d_physics/layer_6="character_hurtbox"
-2d_physics/layer_7="enemy_hurtbox"
+2d_physics/layer_4="pickups"
+2d_physics/layer_6="character_hitbox"
+2d_physics/layer_7="enemy_hitbox"
+2d_physics/layer_8="enemy_hurtbox"
 
 [rendering]
 

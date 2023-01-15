@@ -22,7 +22,7 @@ func _process(_delta) -> void:
 func _get_configuration_warnings():
 	var warnings := PackedStringArray([])
 	if not health is Health:
-		warnings.append("%s requires a Health component to which to apply damage. Please add one in the inspector." % name)
+		warnings.append("%s requires a Health component for which to apply damage. Please add one in the inspector." % name)
 	return warnings
 
 
