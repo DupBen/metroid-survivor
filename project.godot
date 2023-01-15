@@ -35,6 +35,16 @@ _global_script_classes=[{
 "path": "res://src/components/Hurtbox.gd"
 }, {
 "base": "Area2D",
+"class": &"Missile",
+"language": &"GDScript",
+"path": "res://src/weapons/Missile/Missile.gd"
+}, {
+"base": "Node2D",
+"class": &"MissileCannon",
+"language": &"GDScript",
+"path": "res://src/weapons/Missile/MissileCannon.gd"
+}, {
+"base": "Area2D",
 "class": &"Pickup",
 "language": &"GDScript",
 "path": "res://src/pickups/Pickup.gd"
@@ -55,6 +65,8 @@ _global_script_class_icons={
 "Health": "",
 "Hitbox": "",
 "Hurtbox": "",
+"Missile": "",
+"MissileCannon": "",
 "Pickup": "",
 "Samus": "",
 "Zoomer": ""

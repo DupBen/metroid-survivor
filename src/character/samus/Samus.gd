@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 const SPEED := 50.0
 const beam_cannon = preload("res://src/weapons/BeamCannon.tscn")
+const missile_cannon = preload("res://src/weapons/Missile/MissileCannon.tscn")
 
 @export var armor := 5
 
@@ -16,6 +17,7 @@ var passives = []
 
 func _ready() -> void:
 	weapons.append(beam_cannon)
+	weapons.append(missile_cannon)
 	for weapon in weapons:
 		add_child(weapon.instantiate())
 

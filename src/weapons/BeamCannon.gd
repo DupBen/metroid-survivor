@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	var bullet = beam.instantiate()
-	var samus = get_parent() as Samus
+	var samus = get_parent()
 	if not samus:
 		return
 	bullet.direction = samus.face_direction
