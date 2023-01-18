@@ -20,11 +20,16 @@ func _ready() -> void:
 	weapons.append(missile_cannon)
 	for weapon in weapons:
 		add_child(weapon.instantiate())
+		
+	Events.levelled_up.connect(_on_levelled_up)
 
 
 func _physics_process(_delta: float) -> void:
 	move()
 #	print($Health.health)
+
+func _on_levelled_up(level: int)-> void:
+	print("Level: ", level)
 
 
 func move() -> void:

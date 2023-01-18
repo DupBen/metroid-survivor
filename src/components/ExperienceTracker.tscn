@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://lj8mywqgkh0a"]
+
+[ext_resource type="Script" path="res://src/components/ExperienceTracker.gd" id="1_i5r03"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0edr6"]
+radius = 8.0
+
+[node name="ExperienceTracker" type="Node2D"]
+script = ExtResource("1_i5r03")
+
+[node name="Collect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collect"]
+shape = SubResource("CircleShape2D_0edr6")
+debug_color = Color(0.654902, 0.517647, 0, 0.419608)
+
+[connection signal="area_entered" from="Collect" to="." method="_on_collect_area_entered"]
