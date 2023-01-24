@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjirv0x5i748x"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://src/weapons/Beam.gd" id="1_81iky"]
+[ext_resource type="Script" path="res://src/weapons/Beam/Beam.gd" id="1_81iky"]
 [ext_resource type="Texture2D" uid="uid://c6lvdsbvxfqc3" path="res://src/assets/sprites/beam.png" id="1_jwae0"]
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="2_r60kt"]
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
