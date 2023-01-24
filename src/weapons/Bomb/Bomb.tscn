@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch818vhbsunj7"]
+
+[ext_resource type="Script" path="res://src/weapons/Bomb/Bomb.gd" id="1_dw722"]
+[ext_resource type="Texture2D" uid="uid://gdkh3v22lu4c" path="res://src/assets/sprites/bomb.png" id="2_4rtia"]
+[ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="3_3ldk8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qt330"]
+
+[node name="Bomb" type="Area2D"]
+script = ExtResource("1_dw722")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4rtia")
+
+[node name="HitBox" parent="." instance=ExtResource("3_3ldk8")]
+collision_layer = 32
+collision_mask = 128
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_qt330")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="HitBox"]
