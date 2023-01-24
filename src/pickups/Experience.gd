@@ -9,7 +9,7 @@ extends Area2D
 @onready var audio = $AudioStreamPlayer
 
 var _target = null:
-	get =get_target, set = set_target 
+	get = get_target, set = set_target 
 var speed = -1
 
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjwn8ysh7cpe0"]
+[gd_scene load_steps=4 format=3 uid="uid://bjwn8ysh7cpe0"]
 
 [ext_resource type="Texture2D" uid="uid://bsw7ay7e8cuw3" path="res://src/assets/NES - Metroid - Kraids Lair.png" id="1_a4ajm"]
 [ext_resource type="PackedScene" uid="uid://bv0hb2ecqufkf" path="res://src/character/samus/Samus.tscn" id="2_xw62k"]
 [ext_resource type="PackedScene" uid="uid://bart6frkjgsiy" path="res://src/enemies/zoomer/Zoomer.tscn" id="3_82h5h"]
-[ext_resource type="PackedScene" uid="uid://c8qegu20s713a" path="res://src/pickups/Experience.tscn" id="4_i2b6m"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -25,50 +24,3 @@ position = Vector2(335, 96)
 
 [node name="Zoomer3" parent="." instance=ExtResource("3_82h5h")]
 position = Vector2(431, 97)
-
-[node name="Experience" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(204, 100)
-
-[node name="Experience2" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(276, 46)
-
-[node name="Experience3" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(208, 42)
-
-[node name="Experience4" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(255, 9)
-
-[node name="Experience5" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(201, -15)
-
-[node name="Experience6" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(240, -12)
-
-[node name="Experience7" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(286, -30)
-exp = 5
-
-[node name="Experience11" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(106, 1)
-
-[node name="Experience12" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(137, -18)
-
-[node name="Experience13" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(137, -18)
-
-[node name="Experience14" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(161, -1)
-
-[node name="Experience15" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(162, -31)
-
-[node name="Experience8" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(223, -61)
-exp = 987
-
-[node name="Experience9" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(116, 73)
-
-[node name="Experience10" parent="." instance=ExtResource("4_i2b6m")]
-position = Vector2(116, 31)

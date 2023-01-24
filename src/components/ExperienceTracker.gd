@@ -33,6 +33,7 @@ func calculate_exp(exp: int) -> void:
 		current_exp += exp_collected
 		exp_collected = 0
 	
+	
 func get_exp_for_level() -> int:
 	var level = current_level
 	if current_level < 10:
