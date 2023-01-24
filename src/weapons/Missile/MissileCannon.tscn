@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://src/weapons/Missile/MissileCannon.gd" id="1_oi3nu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_chqwf"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipobp"]
 
 [node name="MissileCannon" type="Node2D"]
 script = ExtResource("1_oi3nu")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 autostart = true
 
 [node name="Detector" type="Area2D" parent="."]
@@ -17,7 +17,7 @@ collision_mask = 128
 
 [node name="DetectionZone" type="CollisionShape2D" parent="Detector"]
 scale = Vector2(5, 5)
-shape = SubResource("CircleShape2D_chqwf")
+shape = SubResource("CircleShape2D_ipobp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
