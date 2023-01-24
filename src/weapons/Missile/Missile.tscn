@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="2_r60kt"]
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_awo58"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_inqy6"]
 radius = 4.0
 
 [node name="Missile" type="Area2D"]
@@ -14,7 +14,7 @@ collision_mask = 64
 script = ExtResource("1_sklxj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.576
+rotation = 1.5703
 texture = ExtResource("2_hv8m2")
 
 [node name="HitBox" parent="." instance=ExtResource("2_r60kt")]
@@ -23,7 +23,7 @@ collision_layer = 32
 damage = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_awo58")
+shape = SubResource("CircleShape2D_inqy6")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
@@ -31,8 +31,14 @@ shape = SubResource("CircleShape2D_awo58")
 hitbox = NodePath("../HitBox")
 collision_mask = 128
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="max_collisions_reached" from="CollisionCounter" to="." method="_on_collision_counter_max_collisions_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="HitBox"]
 [editable path="CollisionCounter"]
