@@ -3,8 +3,9 @@ extends CharacterBody2D
 
 
 const SPEED := 50.0
-const beam_cannon = preload("res://src/weapons/BeamCannon.tscn")
+const beam_cannon = preload("res://src/weapons/Beam/BeamCannon.tscn")
 const missile_cannon = preload("res://src/weapons/Missile/MissileCannon.tscn")
+const bomb_dropper = preload("res://src/weapons/Bomb/BombDropper.tscn")
 
 @export var armor := 5
 
@@ -16,15 +17,21 @@ var weapons = []
 var passives = []
 
 func _ready() -> void:
-#	weapons.append(beam_cannon)
-	weapons.append(missile_cannon)
+	weapons.append(beam_cannon)
+#	weapons.append(missile_cannon)
+	weapons.append(bomb_dropper)
 	for weapon in weapons:
 		add_child(weapon.instantiate())
+		
+	Events.levelled_up.connect(_on_levelled_up)
 
 
 func _physics_process(_delta: float) -> void:
 	move()
 #	print($Health.health)
+
+func _on_levelled_up(level: int)-> void:
+	print("Level: ", level)
 
 
 func move() -> void:

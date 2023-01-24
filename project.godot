@@ -12,12 +12,27 @@ _global_script_classes=[{
 "base": "Area2D",
 "class": &"Beam",
 "language": &"GDScript",
-"path": "res://src/weapons/Beam.gd"
+"path": "res://src/weapons/Beam/Beam.gd"
 }, {
 "base": "Node2D",
 "class": &"BeamCannon",
 "language": &"GDScript",
-"path": "res://src/weapons/BeamCannon.gd"
+"path": "res://src/weapons/Beam/BeamCannon.gd"
+}, {
+"base": "Area2D",
+"class": &"Bomb",
+"language": &"GDScript",
+"path": "res://src/weapons/Bomb/Bomb.gd"
+}, {
+"base": "Node2D",
+"class": &"BombDropper",
+"language": &"GDScript",
+"path": "res://src/weapons/Bomb/BombDropper.gd"
+}, {
+"base": "Area2D",
+"class": &"Experience",
+"language": &"GDScript",
+"path": "res://src/pickups/Experience.gd"
 }, {
 "base": "Node2D",
 "class": &"Health",
@@ -62,6 +77,9 @@ _global_script_classes=[{
 _global_script_class_icons={
 "Beam": "",
 "BeamCannon": "",
+"Bomb": "",
+"BombDropper": "",
+"Experience": "",
 "Health": "",
 "Hitbox": "",
 "Hurtbox": "",
@@ -78,6 +96,10 @@ config/name="Metroid Survivor"
 run/main_scene="res://jacesandbox.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Events="*res://src/globals/Events.gd"
 
 [debug]
 
