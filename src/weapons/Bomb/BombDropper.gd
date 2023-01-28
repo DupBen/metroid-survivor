@@ -1,8 +1,9 @@
 class_name BombDropper
 extends Node2D
 
-@onready var bomb = preload("res://src/weapons/Bomb/Bomb.tscn")
-@onready var timer = $Timer
+
+@onready var bomb: PackedScene = preload("res://src/weapons/Bomb/Bomb.tscn")
+@onready var timer: Timer = $Timer
 
 
 func _on_timer_timeout() -> void:

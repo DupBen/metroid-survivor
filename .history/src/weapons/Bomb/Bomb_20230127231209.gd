@@ -24,3 +24,4 @@ func _on_timer_timeout() -> void:
 	audio_stream_player.play()
 	await get_tree().create_timer(.5).timeout
 	queue_free()
+
