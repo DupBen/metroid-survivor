@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="2_r60kt"]
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_inqy6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_eteue"]
 radius = 4.0
 
 [node name="Missile" type="Area2D"]
@@ -18,12 +18,11 @@ rotation = 1.5703
 texture = ExtResource("2_hv8m2")
 
 [node name="HitBox" parent="." instance=ExtResource("2_r60kt")]
-position = Vector2(0, 0)
 collision_layer = 32
 damage = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_inqy6")
+shape = SubResource("CircleShape2D_eteue")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
