@@ -7,29 +7,38 @@ var torque := 5
 var direction: Vector2
 var velocity := Vector2.ZERO
 var target
+var target_aquired = false
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var ready_to_home = false
 const SMOOTH_SPEED = 5.0
 	
 func _ready() -> void:
-	pass
+	if target:
+		target_aquired = true
+
 
 
 func _physics_process(delta) -> void:
 	_handle_initial_direction()
 	_handle_throttle()
-
+	print('target', target)
+	print('target aquired', target_aquired)
+	if (target_aquired and not target):
+		queue_free()
+	
 	if ready_to_home:
 		if not target:
 			_handle_no_target(delta)
 			return
+		
 		# Ease the rotation towards the target
-		rotation = lerp_angle(rotation, -direction.x, delta * SMOOTH_SPEED)
+		rotation = lerp_angle(rotation, (target.global_position - global_position).normalized().angle(), delta * SMOOTH_SPEED)
 		# Move towards target
 		position = position.move_toward(target.global_position, current_speed * delta)
+
+		translate(velocity)
 	else:
 		_initial_burst(delta)
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
@@ -66,4 +75,5 @@ func _on_timer_timeout() -> void:
 func _initial_burst(delta):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position:x", global_position.x + 16, 0.25).set_ease(Tween.EASE_OUT)
+
 	
