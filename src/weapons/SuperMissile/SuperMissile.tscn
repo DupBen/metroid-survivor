@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu6logkcbepk8"]
+
+[ext_resource type="Script" path="res://src/weapons/SuperMissile/SuperMissile.gd" id="1_vrq8x"]
+[ext_resource type="Texture2D" uid="uid://dbira7gu6xnrm" path="res://src/assets/sprites/missile.png" id="2_8d64j"]
+[ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="3_7madm"]
+[ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="4_g40re"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ah2x2"]
+radius = 4.0
+
+[node name="SuperMissile" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_vrq8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 1, 0.72549, 1)
+self_modulate = Color(1, 0.231373, 1, 1)
+rotation = 1.5708
+texture = ExtResource("2_8d64j")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionCounter" parent="." instance=ExtResource("3_7madm")]
+collision_mask = 128
+
+[node name="HitBox" parent="." instance=ExtResource("4_g40re")]
+collision_layer = 32
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_ah2x2")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+
+[editable path="HitBox"]

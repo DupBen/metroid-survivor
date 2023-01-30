@@ -24,3 +24,36 @@ position = Vector2(308, 30)
 
 [node name="Zoomer3" parent="." instance=ExtResource("3_82h5h")]
 position = Vector2(229, 23)
+
+[node name="Zoomer4" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(189, -29)
+
+[node name="Zoomer5" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(179, 211)
+
+[node name="Zoomer6" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(114, 176)
+
+[node name="Zoomer7" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(-3, 146)
+
+[node name="Zoomer8" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(21, 273)
+
+[node name="Zoomer9" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(167, 305)
+
+[node name="Zoomer10" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(332, 253)
+
+[node name="Zoomer11" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(390, 114)
+
+[node name="Zoomer12" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(427, 24)
+
+[node name="Zoomer13" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(370, -57)
+
+[node name="Zoomer14" parent="." instance=ExtResource("3_82h5h")]
+position = Vector2(370, -57)
