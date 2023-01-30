@@ -1,13 +1,13 @@
 class_name SuperMissile
 extends Area2D
 
-var speed := 150
+var speed := 250
 var direction: Vector2
 var velocity := Vector2.ZERO
 var distance := 0.15
 var max_collisions := 1
 
-@onready var sprite := $Sprite2D as Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	pass

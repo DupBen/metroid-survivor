@@ -20,7 +20,7 @@ var passives = []
 func _ready() -> void:
 #	weapons.append(beam_cannon)
 	weapons.append(missile_cannon)
-#	weapons.append(super_missile_cannon)
+	weapons.append(super_missile_cannon)
 #	weapons.append(bomb_dropper)
 	for weapon in weapons:
 		add_child(weapon.instantiate())

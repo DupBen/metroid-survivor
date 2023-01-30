@@ -8,8 +8,9 @@ var direction: Vector2
 var velocity := Vector2.ZERO
 var target
 var target_aquired = false
-@onready var sprite := $Sprite2D as Sprite2D
 @onready var ready_to_home = false
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 const SMOOTH_SPEED = 5.0
 
 func _ready() -> void:

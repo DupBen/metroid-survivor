@@ -1,12 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://i73gpm2vew4d"]
+[gd_scene load_steps=9 format=3 uid="uid://i73gpm2vew4d"]
 
 [ext_resource type="Script" path="res://src/weapons/Missile/Missile.gd" id="1_sklxj"]
-[ext_resource type="Texture2D" uid="uid://dbira7gu6xnrm" path="res://src/assets/sprites/missile.png" id="2_hv8m2"]
+[ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="2_fka7i"]
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="2_r60kt"]
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
-[ext_resource type="Texture2D" uid="uid://gdkh3v22lu4c" path="res://src/assets/sprites/bomb.png" id="5_2mnda"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ast3m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw3g8"]
+atlas = ExtResource("2_fka7i")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t306d"]
+atlas = ExtResource("2_fka7i")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0ldj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw3g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t306d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkpsv"]
 radius = 4.0
 
 [node name="Missile" type="Area2D"]
@@ -14,16 +35,18 @@ collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_sklxj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5703
-texture = ExtResource("2_hv8m2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_q0ldj")
+autoplay = "default"
+frame_progress = 0.860546
 
 [node name="HitBox" parent="." instance=ExtResource("2_r60kt")]
 collision_layer = 32
 damage = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_ast3m")
+shape = SubResource("CircleShape2D_kkpsv")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
@@ -34,11 +57,6 @@ collision_mask = 128
 wait_time = 0.25
 one_shot = true
 autostart = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(22, 0)
-scale = Vector2(0.285001, 0.320001)
-texture = ExtResource("5_2mnda")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
