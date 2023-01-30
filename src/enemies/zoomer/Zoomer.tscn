@@ -71,8 +71,7 @@ motion_mode = 1
 script = ExtResource("1")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_am7jn")
-playing = true
+sprite_frames = SubResource("SpriteFrames_am7jn")
 offset = Vector2(0, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,7 +86,6 @@ health = NodePath("../Health")
 shape = SubResource("CircleShape2D_7dids")
 
 [node name="HitBox" parent="." instance=ExtResource("3_3127v")]
-position = Vector2(0, 0)
 collision_layer = 64
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
