@@ -18,6 +18,7 @@ var weapons = []
 var passives = []
 
 func _ready() -> void:
+	Globals.Player = self
 	weapons.append(beam_cannon)
 	weapons.append(missile_cannon)
 	weapons.append(super_missile_cannon)

@@ -22,8 +22,7 @@ func _ready() -> void:
 func _physics_process(delta) -> void:
 	_handle_initial_direction()
 	_handle_throttle()
-	print('target', target)
-	print('target aquired', target_aquired)
+
 	if (target_aquired and not target):
 		queue_free()
 	if ready_to_home:

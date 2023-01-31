@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1kvlxysnug7o"]
+
+[ext_resource type="Script" path="res://src/spawner/Spawner.gd" id="1_wwt8e"]
+[ext_resource type="Script" path="res://src/spawner/SpawnerInfo.gd" id="2_oncle"]
+[ext_resource type="PackedScene" uid="uid://bart6frkjgsiy" path="res://src/enemies/zoomer/Zoomer.tscn" id="3_nkuhk"]
+
+[sub_resource type="Resource" id="Resource_2e8nh"]
+script = ExtResource("2_oncle")
+time_start = null
+time_end = 320
+spawn = ExtResource("3_nkuhk")
+spawn_amount = 1
+spawn_delay = 1
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_wwt8e")
+spawnsArr = [SubResource("Resource_2e8nh")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
