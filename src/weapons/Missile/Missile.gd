@@ -8,6 +8,7 @@ var direction: Vector2
 var velocity := Vector2.ZERO
 var target
 var target_aquired = false
+@onready var sprite := $Sprite2D as Sprite2D
 @onready var ready_to_home = false
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -26,12 +27,10 @@ func _physics_process(delta) -> void:
 	print('target aquired', target_aquired)
 	if (target_aquired and not target):
 		queue_free()
-
 	if ready_to_home:
 		if not target:
 			_handle_no_target(delta)
 			return
-
 		# Ease the rotation towards the target
 		rotation = lerp_angle(rotation, (target.global_position - global_position).normalized().angle(), delta * SMOOTH_SPEED)
 		# Move towards target

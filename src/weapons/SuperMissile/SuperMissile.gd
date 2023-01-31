@@ -1,13 +1,13 @@
 class_name SuperMissile
 extends Area2D
 
-var speed := 250
+var speed := 150
 var direction: Vector2
 var velocity := Vector2.ZERO
 var distance := 0.15
 var max_collisions := 1
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite := $Sprite2D as Sprite2D
 
 func _ready() -> void:
 	pass
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _physics_process(delta) -> void:
 	_handle_initial_direction();
-	
+
 	velocity.x = direction.x * speed * delta
 	velocity.y = direction.y * speed * delta
 	translate(velocity)
