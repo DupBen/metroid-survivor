@@ -17,7 +17,11 @@ collision_mask = 128
 
 [node name="DetectionZone" type="CollisionShape2D" parent="Detector"]
 scale = Vector2(5, 5)
+<<<<<<< HEAD
 shape = SubResource("CircleShape2D_gyofs")
+=======
+shape = SubResource("CircleShape2D_ll7l8")
+>>>>>>> 709c527 (Adds enemy spawner)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]

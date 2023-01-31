@@ -24,6 +24,7 @@ var passives = []
 
 var is_moving = false;
 
+
 func _ready() -> void:
     set_as_top_level(true)
     Globals.Player = self
@@ -33,8 +34,8 @@ func _ready() -> void:
     #weapons.append(plasma_beam_cannon)
     weapons.append(spazer_beam_cannon)
     #weapons.append(missile_cannon)
-#    weapons.append(super_missile_cannon)
-#    weapons.append(bomb_dropper)
+    #weapons.append(super_missile_cannon)
+    #weapons.append(bomb_dropper)
     for weapon in weapons:
         add_child(weapon.instantiate())
 
