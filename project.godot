@@ -8,100 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Area2D",
-"class": &"Beam",
-"language": &"GDScript",
-"path": "res://src/weapons/Beam/Beam.gd"
-}, {
-"base": "Node2D",
-"class": &"BeamCannon",
-"language": &"GDScript",
-"path": "res://src/weapons/Beam/BeamCannon.gd"
-}, {
-"base": "Area2D",
-"class": &"Bomb",
-"language": &"GDScript",
-"path": "res://src/weapons/Bomb/Bomb.gd"
-}, {
-"base": "Node2D",
-"class": &"BombDropper",
-"language": &"GDScript",
-"path": "res://src/weapons/Bomb/BombDropper.gd"
-}, {
-"base": "Area2D",
-"class": &"Experience",
-"language": &"GDScript",
-"path": "res://src/pickups/Experience.gd"
-}, {
-"base": "Node2D",
-"class": &"Health",
-"language": &"GDScript",
-"path": "res://src/components/Health.gd"
-}, {
-"base": "Area2D",
-"class": &"Hitbox",
-"language": &"GDScript",
-"path": "res://src/components/Hitbox.gd"
-}, {
-"base": "Area2D",
-"class": &"Hurtbox",
-"language": &"GDScript",
-"path": "res://src/components/Hurtbox.gd"
-}, {
-"base": "Area2D",
-"class": &"Missile",
-"language": &"GDScript",
-"path": "res://src/weapons/Missile/Missile.gd"
-}, {
-"base": "Node2D",
-"class": &"MissileCannon",
-"language": &"GDScript",
-"path": "res://src/weapons/Missile/MissileCannon.gd"
-}, {
-"base": "Area2D",
-"class": &"Pickup",
-"language": &"GDScript",
-"path": "res://src/pickups/Pickup.gd"
-}, {
-"base": "CharacterBody2D",
-"class": &"Samus",
-"language": &"GDScript",
-"path": "res://src/character/samus/Samus.gd"
-}, {
-"base": "Area2D",
-"class": &"SuperMissile",
-"language": &"GDScript",
-"path": "res://src/weapons/SuperMissile/SuperMissile.gd"
-}, {
-"base": "Node2D",
-"class": &"SuperMissileCannon",
-"language": &"GDScript",
-"path": "res://src/weapons/SuperMissile/SuperMissileCannon.gd"
-}, {
-"base": "CharacterBody2D",
-"class": &"Zoomer",
-"language": &"GDScript",
-"path": "res://src/enemies/zoomer/Zoomer.gd"
-}]
-_global_script_class_icons={
-"Beam": "",
-"BeamCannon": "",
-"Bomb": "",
-"BombDropper": "",
-"Experience": "",
-"Health": "",
-"Hitbox": "",
-"Hurtbox": "",
-"Missile": "",
-"MissileCannon": "",
-"Pickup": "",
-"Samus": "",
-"SuperMissile": "",
-"SuperMissileCannon": "",
-"Zoomer": ""
-}
-
 [application]
 
 config/name="Metroid Survivor"
@@ -134,26 +40,26 @@ window/stretch/aspect="ignore"
 
 up={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 down={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 left={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 right={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 

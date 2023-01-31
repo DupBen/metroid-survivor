@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
 [ext_resource type="Texture2D" uid="uid://gdkh3v22lu4c" path="res://src/assets/sprites/bomb.png" id="5_2mnda"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ast3m"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqycn"]
 radius = 4.0
 
 [node name="Missile" type="Area2D"]
@@ -23,7 +23,7 @@ collision_layer = 32
 damage = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_ast3m")
+shape = SubResource("CircleShape2D_jqycn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
