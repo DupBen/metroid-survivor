@@ -13,7 +13,6 @@ func _ready() -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("Spawner timeout")
 	if not player:
 		return
 		
@@ -34,7 +33,6 @@ func _on_timer_timeout() -> void:
 		while counter < spawn.spawn_amount:
 			var enemy_spawn = enemy.instantiate()
 			var random_pos = get_random_position()
-			print("random pos", random_pos)
 			enemy_spawn.global_position = random_pos
 			add_child(enemy_spawn)
 			counter += 1
@@ -42,12 +40,15 @@ func _on_timer_timeout() -> void:
 
 func get_random_position():
 	var viewport = get_viewport_rect().size * randf_range(1.1, 1.4)
-	print("viewport", get_viewport_rect().size)
 	
-	var top_left = Vector2(player.global_position.x - viewport.x / 2, player.global_position.y - viewport.y / 2)
-	var top_right = Vector2(player.global_position.x + viewport.x / 2, player.global_position.y - viewport.y / 2)
-	var bottom_left = Vector2(player.global_position.x - viewport.x / 2, player.global_position.y + viewport.y / 2)
-	var bottom_right = Vector2(player.global_position.x + viewport.x / 2, player.global_position.y + viewport.y / 2)
+	var viewport_x_half = viewport.x / 2
+	var viewport_y_half = viewport.y / 2
+	var player_pos = player.global_position
+	
+	var top_left = Vector2(player_pos.x - viewport_x_half, player_pos.y - viewport_y_half)
+	var top_right = Vector2(player_pos.x + viewport_x_half, player_pos.y - viewport_y_half)
+	var bottom_left = Vector2(player_pos.x - viewport_x_half, player_pos.y + viewport_y_half)
+	var bottom_right = Vector2(player_pos.x + viewport_x_half, player_pos.y + viewport_y_half)
 	
 	var spawn_location = ["up", "down", "right", "left"].pick_random()
 	
