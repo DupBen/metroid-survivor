@@ -14,8 +14,10 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	var super_missle = super_missle_scene.instantiate()
 	var samus = get_parent()
+
 	if not samus:
 		return
+
 	super_missle.direction = samus.face_direction
 	super_missle.global_position = samus.global_position
 	get_tree().get_root().add_child(super_missle)

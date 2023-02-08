@@ -29,7 +29,7 @@ func _on_timer_timeout() -> void:
 	if enemies_in_range.size() > 0:
 		#If enemy in range target the first one
 		missileNode.target = enemies_in_range[0]
-	# TODO create missile animation and control the missiles start angle
+	
 	get_tree().get_root().add_child(missileNode)
 
 

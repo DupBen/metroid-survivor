@@ -30,6 +30,7 @@ func _physics_process(delta) -> void:
 			_handle_no_target(delta)
 			return
 		# Ease the rotation towards the target
+		# TODO Discuss the correct vector math with jace. Only works one direction. angle is always the same no matter the direction
 		rotation = lerp_angle(rotation, (target.global_position - global_position).normalized().angle(), delta * SMOOTH_SPEED)
 		# Move towards target
 		position = position.move_toward(target.global_position, current_speed * delta)
@@ -48,11 +49,11 @@ func _on_collision_counter_max_collisions_reached() -> void:
 
 func _handle_initial_direction() -> void:
 	if direction.x < 0:
-		sprite.set_rotation_degrees(270)
+		set_rotation_degrees(180)
 	if direction.y < 0:
-		sprite.set_rotation_degrees(180)
+		set_rotation_degrees(90)
 	if direction.y > 0:
-		sprite.set_rotation_degrees(0)
+		set_rotation_degrees(0)
 
 
 func _handle_throttle() -> void:
@@ -71,6 +72,8 @@ func _on_timer_timeout() -> void:
 
 
 func _initial_burst(delta):
+	# Burst forward in players direction
+	var burst_distance = 16 * direction.x
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position:x", global_position.x + 16, 0.25).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_position:x", global_position.x + burst_distance, 0.25).set_ease(Tween.EASE_OUT)
 

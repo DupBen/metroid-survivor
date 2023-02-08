@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="3_7madm"]
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="4_g40re"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_io5ow"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdvik"]
 radius = 4.0
 
 [node name="SuperMissile" type="Area2D"]
@@ -28,7 +28,7 @@ collision_mask = 128
 collision_layer = 32
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_io5ow")
+shape = SubResource("CircleShape2D_fdvik")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 
