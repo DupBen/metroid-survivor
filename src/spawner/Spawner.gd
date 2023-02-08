@@ -13,7 +13,6 @@ func _ready() -> void:
 
 
 func _on_timer_timeout() -> void:
-    
     if not player:
         return
         
