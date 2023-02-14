@@ -5,29 +5,29 @@
 [ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="2_r60kt"]
 [ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="4_0rvvk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2o837"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_si4oi"]
 atlas = ExtResource("2_fka7i")
 region = Rect2(96, 48, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8kbd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g35n4"]
 atlas = ExtResource("2_fka7i")
 region = Rect2(144, 48, 48, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p1b1d"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_q61k6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2o837")
+"texture": SubResource("AtlasTexture_si4oi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c8kbd")
+"texture": SubResource("AtlasTexture_g35n4")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kgc2t"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0858e"]
 radius = 4.0
 
 [node name="Missile" type="Area2D"]
@@ -37,7 +37,7 @@ script = ExtResource("1_sklxj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_p1b1d")
+sprite_frames = SubResource("SpriteFrames_q61k6")
 autoplay = "default"
 frame_progress = 0.24045
 
@@ -46,7 +46,7 @@ collision_layer = 32
 damage = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-shape = SubResource("CircleShape2D_kgc2t")
+shape = SubResource("CircleShape2D_0858e")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
