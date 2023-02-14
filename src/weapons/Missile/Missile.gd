@@ -32,6 +32,7 @@ func _physics_process(delta) -> void:
 		# Ease the rotation towards the target
 		# TODO Discuss the correct vector math with jace. Only works one direction. angle is always the same no matter the direction
 		rotation = lerp_angle(rotation, (target.global_position - global_position).normalized().angle(), delta * SMOOTH_SPEED)
+		print("rotation", rotation)
 		# Move towards target
 		position = position.move_toward(target.global_position, current_speed * delta)
 
