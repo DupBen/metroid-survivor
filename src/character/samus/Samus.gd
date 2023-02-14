@@ -7,6 +7,8 @@ const beam_cannon = preload("res://src/weapons/Beam/BeamCannon.tscn")
 const missile_cannon = preload("res://src/weapons/Missile/MissileCannon.tscn")
 const super_missile_cannon = preload("res://src/weapons/SuperMissile/SuperMissileCannon.tscn")
 const bomb_dropper = preload("res://src/weapons/Bomb/BombDropper.tscn")
+const power_bomb_dropper = preload("res://src/weapons/PowerBomb/PowerBombDropper.tscn")
+const grapple_beam_launcher = preload("res://src/weapons/GrappleBeam/GrappleBeamLauncher.tscn")
 
 @export var armor := 5
 
@@ -18,10 +20,12 @@ var weapons = []
 var passives = []
 
 func _ready() -> void:
-	weapons.append(beam_cannon)
-	weapons.append(missile_cannon)
-	weapons.append(super_missile_cannon)
-	weapons.append(bomb_dropper)
+#	weapons.append(beam_cannon)
+#	weapons.append(missile_cannon)
+#	weapons.append(super_missile_cannon)
+#	weapons.append(bomb_dropper)
+	weapons.append(power_bomb_dropper)
+	weapons.append(grapple_beam_launcher)
 	for weapon in weapons:
 		add_child(weapon.instantiate())
 
