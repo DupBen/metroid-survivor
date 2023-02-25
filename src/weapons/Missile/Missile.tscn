@@ -59,6 +59,26 @@ wait_time = 0.25
 one_shot = true
 autostart = true
 
+[node name="Marker2D" type="Marker2D" parent="."]
+scale = Vector2(2, 2)
+gizmo_extents = 82.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -20.0
+offset_right = 11.0
+offset_bottom = -19.0
+rotation = 1.5708
+color = Color(0.747928, 0.0372817, 0.0207335, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -26.0
+offset_right = 21.0
+offset_bottom = -14.0
+rotation = 3.13771
+color = Color(0.988235, 0.341176, 0.0823529, 1)
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
