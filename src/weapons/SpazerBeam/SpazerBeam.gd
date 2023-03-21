@@ -1,4 +1,4 @@
-class_name Beam
+class_name SpazerBeam
 extends Area2D
 
 var speed := 250
@@ -25,4 +25,3 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_collision_counter_max_collisions_reached() -> void:
     queue_free()
-

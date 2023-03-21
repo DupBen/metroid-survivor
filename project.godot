@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Metroid Survivor"
-run/main_scene="res://jacesandbox.tscn"
+run/main_scene="res://mikesandbox.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Events="*res://src/globals/Events.gd"
+Globals="*res://src/globals/Globals.gd"
 
 [debug]
 
