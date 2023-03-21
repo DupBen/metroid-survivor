@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv0hb2ecqufkf"]
+[gd_scene load_steps=14 format=3 uid="uid://bv0hb2ecqufkf"]
 
 [ext_resource type="Script" path="res://src/character/samus/Samus.gd" id="1_hn77h"]
 [ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="2_ugpua"]
@@ -6,6 +6,80 @@
 [ext_resource type="PackedScene" uid="uid://06qnv6lr4cj0" path="res://src/components/Health.tscn" id="4_eo610"]
 [ext_resource type="PackedScene" uid="uid://lj8mywqgkh0a" path="res://src/components/ExperienceTracker.tscn" id="5_gdv7r"]
 [ext_resource type="PackedScene" uid="uid://cr1mew46impki" path="res://src/components/TractorBeam.tscn" id="6_aekb3"]
+
+[sub_resource type="Animation" id="Animation_ahbbs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [187]
+}
+
+[sub_resource type="Animation" id="Animation_kg0he"]
+resource_name = "walk"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [187, 188, 189, 190, 191, 192, 193, 194, 195, 196]
+}
+
+[sub_resource type="Animation" id="Animation_4e5dt"]
+resource_name = "death_right"
+length = 8.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4, 3.2, 4, 4.8, 5.6, 6.4, 7.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [502, 503, 504, 505, 506, 507, 508, 509, 510, 511]
+}
+
+[sub_resource type="Animation" id="Animation_0qsa7"]
+resource_name = "idle_right"
+length = 3.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [88, 89, 90, 89, 88]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb7iy"]
+_data = {
+"RESET": SubResource("Animation_ahbbs"),
+"death_right": SubResource("Animation_4e5dt"),
+"idle_right": SubResource("Animation_0qsa7"),
+"walk": SubResource("Animation_kg0he")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ota4"]
 radius = 8.0
@@ -19,9 +93,16 @@ script = ExtResource("1_hn77h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ugpua")
-hframes = 45
-vframes = 29
-frame = 159
+hframes = 25
+vframes = 30
+frame = 187
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+speed_scale = 2.88
+libraries = {
+"": SubResource("AnimationLibrary_kb7iy")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)

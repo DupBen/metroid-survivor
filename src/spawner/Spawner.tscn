@@ -14,7 +14,7 @@ spawn_delay = 1
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_wwt8e")
-spawnsArr = [SubResource("Resource_2e8nh")]
+spawnsArr = Array[ExtResource("2_oncle")]([SubResource("Resource_2e8nh")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
