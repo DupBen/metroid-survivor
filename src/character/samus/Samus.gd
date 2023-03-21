@@ -4,6 +4,10 @@ extends CharacterBody2D
 
 const SPEED := 50.0
 const beam_cannon = preload("res://src/weapons/Beam/BeamCannon.tscn")
+const ice_beam_cannon = preload("res://src/weapons/IceBeam/IceBeamCannon.tscn")
+const wave_beam_cannon = preload("res://src/weapons/WaveBeam/WaveBeamCannon.tscn")
+const plasma_beam_cannon = preload("res://src/weapons/PlasmaBeam/PlasmaBeamCannon.tscn")
+const spazer_beam_cannon = preload("res://src/weapons/SpazerBeam/SpazerBeamCannon.tscn")
 const missile_cannon = preload("res://src/weapons/Missile/MissileCannon.tscn")
 const super_missile_cannon = preload("res://src/weapons/SuperMissile/SuperMissileCannon.tscn")
 const bomb_dropper = preload("res://src/weapons/Bomb/BombDropper.tscn")
@@ -23,8 +27,12 @@ var is_moving = false;
 func _ready() -> void:
     set_as_top_level(true)
     Globals.Player = self
-    weapons.append(beam_cannon)
-    weapons.append(missile_cannon)
+    #weapons.append(beam_cannon)
+    #weapons.append(ice_beam_cannon)
+    #weapons.append(wave_beam_cannon)
+    #weapons.append(plasma_beam_cannon)
+    weapons.append(spazer_beam_cannon)
+    #weapons.append(missile_cannon)
 #    weapons.append(super_missile_cannon)
 #    weapons.append(bomb_dropper)
     for weapon in weapons:
