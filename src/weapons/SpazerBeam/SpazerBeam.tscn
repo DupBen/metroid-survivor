@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0doybmj6eusu"]
+[gd_scene load_steps=6 format=3 uid="uid://d0doybmj6eusu"]
 
 [ext_resource type="Script" path="res://src/weapons/SpazerBeam/SpazerBeam.gd" id="1_21lri"]
 [ext_resource type="Texture2D" uid="uid://d1i8otp34rldj" path="res://src/assets/sprites/IceBeam.png" id="2_tkorg"]
@@ -7,8 +7,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u5bmo"]
 radius = 4.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pi5ja"]
 
 [node name="SpazerBeam" type="Area2D"]
 collision_layer = 32
@@ -33,9 +31,6 @@ shape = SubResource("CircleShape2D_u5bmo")
 [node name="CollisionCounter" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("3_7ass3")]
 hitbox = NodePath("../HitBox")
 collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_pi5ja")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 
