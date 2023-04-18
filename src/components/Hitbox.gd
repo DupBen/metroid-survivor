@@ -6,9 +6,9 @@ extends Area2D
 
 
 func _ready() -> void:
-    pass
+	pass
 
 
 func _process(_delta) -> void:
-    pass
-    
+	pass
+	
