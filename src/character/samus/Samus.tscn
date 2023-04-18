@@ -22,23 +22,6 @@ tracks/0/keys = {
 "values": [187]
 }
 
-[sub_resource type="Animation" id="Animation_kg0he"]
-resource_name = "walk"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [187, 188, 189, 190, 191, 192, 193, 194, 195, 196]
-}
-
 [sub_resource type="Animation" id="Animation_4e5dt"]
 resource_name = "death_right"
 length = 8.0
@@ -71,6 +54,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [88, 89, 90, 89, 88]
+}
+
+[sub_resource type="Animation" id="Animation_kg0he"]
+resource_name = "walk"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [187, 188, 189, 190, 191, 192, 193, 194, 195, 196]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kb7iy"]

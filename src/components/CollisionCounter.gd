@@ -1,16 +1,19 @@
 @tool
 extends Node2D
 
-
 signal max_collisions_reached
 
-@export var max_collisions := 1
 @export var hitbox : Hitbox
+@export var max_collisions := 1
+
 @export_flags_2d_physics var collision_mask
 
+func _ready():
+    print('collision counter ready')
+    print('hitbox ', hitbox)
 
-func _ready() -> void:
     if hitbox is Hitbox:
+        print('has hitbox')
         hitbox.area_entered.connect(_on_hitbox_area_entered)
         hitbox.collision_mask += collision_mask
 
@@ -28,4 +31,3 @@ func _on_hitbox_area_entered(hurtbox: Hurtbox) -> void:
     max_collisions -= 1
     if max_collisions <= 0: 
         emit_signal("max_collisions_reached")
-

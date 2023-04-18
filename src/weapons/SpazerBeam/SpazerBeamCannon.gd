@@ -3,7 +3,7 @@ extends Node2D
 
 @export var fire_rate := 0.75
 
-@onready var beam = preload("res://src/weapons/PlasmaBeam/PlasmaBeam.tscn")
+@onready var beam = preload("res://src/weapons/SpazerBeam/SpazerBeam.tscn")
 @onready var timer = $Timer
 
 func _ready() -> void:

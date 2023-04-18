@@ -43,6 +43,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_collision_counter_max_collisions_reached() -> void:
+    print('Collisions max')
     queue_free()
 
 
