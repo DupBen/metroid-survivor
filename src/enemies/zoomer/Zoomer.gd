@@ -14,4 +14,7 @@ func  _physics_process(_delta: float) -> void:
 
 
 func _on_health_died() -> void:
+	var exp = preload("res://src/pickups/Experience.tscn").instantiate()
+	exp.global_position = position
+	get_tree().get_root().add_child(exp)	
 	queue_free()

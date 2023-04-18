@@ -5,15 +5,21 @@ extends Node2D
 
 @onready var beam = preload("res://src/weapons/Beam/Beam.tscn")
 @onready var timer = $Timer
+@onready var samus = Globals.Samus
 
 func _ready() -> void:
 	timer.wait_time = fire_rate
 	timer.start()
 	
+	
+func _physics_process(delta: float) -> void:
+	if samus.has_node("TeRt") or true:
+		print('here')
+		timer.wait_time = fire_rate * .5
+
 
 func _on_timer_timeout() -> void:
 	var bullet = beam.instantiate()
-	var samus = get_parent()
 	if not samus:
 		return
 	bullet.direction = samus.face_direction

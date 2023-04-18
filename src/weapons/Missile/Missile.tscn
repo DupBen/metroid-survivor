@@ -50,8 +50,7 @@ shape = SubResource("CircleShape2D_py0ks")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="CollisionCounter" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("4_0rvvk")]
-hitbox = NodePath("../HitBox")
+[node name="CollisionCounter" parent="." instance=ExtResource("4_0rvvk")]
 collision_mask = 128
 
 [node name="Timer" type="Timer" parent="."]

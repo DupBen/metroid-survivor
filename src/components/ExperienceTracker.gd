@@ -33,6 +33,7 @@ func calculate_exp(exp: int) -> void:
 		current_exp += exp_collected
 		exp_collected = 0
 	
+	print("EXP_TOTAL: ", current_exp)
 	
 func get_exp_for_level() -> int:
 	var level = current_level

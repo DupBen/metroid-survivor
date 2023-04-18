@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv0hb2ecqufkf"]
+[gd_scene load_steps=10 format=3 uid="uid://bv0hb2ecqufkf"]
 
 [ext_resource type="Script" path="res://src/character/samus/Samus.gd" id="1_hn77h"]
 [ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="2_ugpua"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://06qnv6lr4cj0" path="res://src/components/Health.tscn" id="4_eo610"]
 [ext_resource type="PackedScene" uid="uid://lj8mywqgkh0a" path="res://src/components/ExperienceTracker.tscn" id="5_gdv7r"]
 [ext_resource type="PackedScene" uid="uid://cr1mew46impki" path="res://src/components/TractorBeam.tscn" id="6_aekb3"]
+[ext_resource type="PackedScene" uid="uid://c7heyibgaueeg" path="res://src/character/samus/Armory.tscn" id="7_u77r8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ota4"]
 radius = 8.0
@@ -19,9 +20,9 @@ script = ExtResource("1_hn77h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ugpua")
-hframes = 45
-vframes = 29
-frame = 159
+hframes = 25
+vframes = 30
+frame = 88
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
@@ -31,10 +32,9 @@ shape = SubResource("CircleShape2D_5ota4")
 visible = false
 health = 100
 
-[node name="Hurtbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_pshqb")]
+[node name="Hurtbox" parent="." instance=ExtResource("3_pshqb")]
 visible = false
 collision_mask = 64
-health = NodePath("../Health")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CircleShape2D_ai536")
@@ -45,5 +45,9 @@ shape = SubResource("CircleShape2D_ai536")
 
 [node name="TractorBeam" parent="." instance=ExtResource("6_aekb3")]
 collision_mask = 8
+
+[node name="Armory" parent="." instance=ExtResource("7_u77r8")]
+
+[node name="Modifiers" type="Node2D" parent="."]
 
 [editable path="Hurtbox"]

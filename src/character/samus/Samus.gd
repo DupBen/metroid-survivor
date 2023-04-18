@@ -3,32 +3,28 @@ extends CharacterBody2D
 
 
 const SPEED := 50.0
-const beam_cannon = preload("res://src/weapons/Beam/BeamCannon.tscn")
-const missile_cannon = preload("res://src/weapons/Missile/MissileCannon.tscn")
-const super_missile_cannon = preload("res://src/weapons/SuperMissile/SuperMissileCannon.tscn")
-const bomb_dropper = preload("res://src/weapons/Bomb/BombDropper.tscn")
-const power_bomb_dropper = preload("res://src/weapons/PowerBomb/PowerBombDropper.tscn")
-const grapple_beam_launcher = preload("res://src/weapons/GrappleBeam/GrappleBeamLauncher.tscn")
 
 @export var armor := 5
 
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var hurtbox := $Hurtbox as Hurtbox
+@onready var armory := $Armory as Armory
+@onready var modifiers: Node2D = $Modifiers
 
 var face_direction := Vector2.RIGHT
-var weapons = []
+
 var passives = []
 
 func _ready() -> void:
-#	weapons.append(beam_cannon)
-#	weapons.append(missile_cannon)
-#	weapons.append(super_missile_cannon)
-#	weapons.append(bomb_dropper)
-	weapons.append(power_bomb_dropper)
-	weapons.append(grapple_beam_launcher)
-	for weapon in weapons:
-		add_child(weapon.instantiate())
+	Globals.Samus = self
 
+	const beam_cannon = preload("res://src/weapons/Beam/BeamCannon.tscn")
+#	const missile_cannon = preload("res://src/weapons/Missile/MissileCannon.tscn")
+#	const super_missile_cannon = preload("res://src/weapons/SuperMissile/SuperMissileCannon.tscn")
+#	const bomb_dropper = preload("res://src/weapons/Bomb/BombDropper.tscn")
+#	const power_bomb_dropper = preload("res://src/weapons/PowerBomb/PowerBombDropper.tscn")
+#	const grapple_beam_launcher = preload("res://src/weapons/GrappleBeam/GrappleBeamLauncher.tscn")
+	armory.add_weapon(beam_cannon)
 	Events.levelled_up.connect(_on_levelled_up)
 
 

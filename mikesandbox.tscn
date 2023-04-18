@@ -14,7 +14,6 @@ texture = ExtResource("1_a4ajm")
 position = Vector2(169, 97)
 
 [node name="SamusCamera2D" type="Camera2D" parent="Samus"]
-current = true
 
 [node name="Zoomer" parent="." instance=ExtResource("3_82h5h")]
 position = Vector2(258, 142)
