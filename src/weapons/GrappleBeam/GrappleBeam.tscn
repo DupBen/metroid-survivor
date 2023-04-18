@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dies2p7vlrn1j"]
+
+[ext_resource type="Script" path="res://src/weapons/GrappleBeam/GrappleBeam.gd" id="1_w3mjg"]
+[ext_resource type="Texture2D" uid="uid://d1yd668tvhhyw" path="res://src/assets/sprites/grapple_beam.png" id="2_lcd48"]
+
+[sub_resource type="Animation" id="Animation_58uyi"]
+resource_name = "launch"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e1n5p"]
+_data = {
+"launch": SubResource("Animation_58uyi")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxi5q"]
+atlas = ExtResource("2_lcd48")
+region = Rect2(0, 0, 120, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ag0h"]
+atlas = ExtResource("2_lcd48")
+region = Rect2(0, 16, 120, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as5la"]
+atlas = ExtResource("2_lcd48")
+region = Rect2(0, 32, 120, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sslha"]
+atlas = ExtResource("2_lcd48")
+region = Rect2(0, 48, 120, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2rx5"]
+atlas = ExtResource("2_lcd48")
+region = Rect2(0, 64, 120, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rwmi"]
+atlas = ExtResource("2_lcd48")
+region = Rect2(0, 80, 120, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h5kam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxi5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ag0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as5la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sslha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2rx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rwmi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="GrappleBeam" type="Area2D"]
+script = ExtResource("1_w3mjg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e1n5p")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 0)
+sprite_frames = SubResource("SpriteFrames_h5kam")
+autoplay = "default"
+frame_progress = 0.318014

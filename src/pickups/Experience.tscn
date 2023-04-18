@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6jttxyc1wut" path="res://src/assets/sprites/energy.png" id="2_ywjni"]
 [ext_resource type="AudioStream" uid="uid://dnhi2hrjnelvc" path="res://src/assets/sounds/sfx/ui_switch.wav" id="3_kvdpf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7p62a"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm86s"]
 radius = 5.0
 
 [node name="Experience" type="Area2D"]
@@ -13,7 +13,7 @@ collision_mask = 0
 script = ExtResource("1_710hq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7p62a")
+shape = SubResource("CircleShape2D_rm86s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ywjni")

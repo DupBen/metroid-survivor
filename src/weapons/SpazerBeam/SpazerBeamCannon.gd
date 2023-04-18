@@ -13,9 +13,6 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	var bullet = beam.instantiate()
-	var samus = get_parent()
-	if not samus:
-		return
-	bullet.direction = samus.face_direction
-	bullet.global_position = samus.global_position
+	bullet.direction = Globals.Player.face_direction
+	bullet.global_position = Globals.Player.global_position
 	get_tree().get_root().add_child(bullet)
