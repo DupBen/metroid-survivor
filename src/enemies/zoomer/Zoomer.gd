@@ -8,10 +8,10 @@ extends CharacterBody2D
 
 
 func  _physics_process(_delta: float) -> void:
-    var direction := global_position.direction_to(player.global_position)
-    velocity = direction * speed
-    move_and_slide()
+	var direction := global_position.direction_to(player.global_position)
+	velocity = direction * speed
+	move_and_slide()
 
 
 func _on_health_died() -> void:
-    queue_free()
+	queue_free()

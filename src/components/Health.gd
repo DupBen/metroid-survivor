@@ -8,6 +8,6 @@ signal died
 
 
 func damage(amount: int) -> void:
-    health -= amount
-    if health <= 0:
-        emit_signal("died")
+	health -= amount
+	if health <= 0:
+		emit_signal("died")
