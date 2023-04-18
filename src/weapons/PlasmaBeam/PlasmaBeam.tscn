@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8s8un78n0pt"]
+
+[ext_resource type="Script" path="res://src/weapons/WaveBeam/WaveBeam.gd" id="1_dpruh"]
+[ext_resource type="Texture2D" uid="uid://d1i8otp34rldj" path="res://src/assets/sprites/IceBeam.png" id="2_xts81"]
+[ext_resource type="PackedScene" uid="uid://do5vndd7kkh1q" path="res://src/components/CollisionCounter.tscn" id="3_djnw7"]
+[ext_resource type="PackedScene" uid="uid://bayhekmn8i6d8" path="res://src/components/Hitbox.tscn" id="4_oxwof"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5bmo"]
+radius = 4.0
+
+[node name="SpazerBeam" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_dpruh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.537255, 0.65098, 0, 1)
+scale = Vector2(15, 15)
+texture = ExtResource("2_xts81")
+hframes = 15
+vframes = 15
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionCounter" parent="." instance=ExtResource("3_djnw7")]
+collision_mask = 128
+
+[node name="HitBox" parent="." instance=ExtResource("4_oxwof")]
+collision_layer = 32
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_u5bmo")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+
+[editable path="HitBox"]

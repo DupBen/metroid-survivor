@@ -10,8 +10,8 @@ extends Node2D
 func _ready() -> void:
 	timer.wait_time = fire_rate
 	timer.start()
-	
-	
+
+
 func _physics_process(delta: float) -> void:
 	if samus.has_node("TeRt") or true:
 		print('here')
