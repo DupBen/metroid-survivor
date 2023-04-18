@@ -12,31 +12,31 @@ signal damage(amount)
 
 
 func _ready() -> void:
-    pass
+	pass
 
 
 func _process(_delta) -> void:
-    pass
+	pass
 
 
 func _get_configuration_warnings():
-    var warnings := PackedStringArray([])
-    if not health is Health:
-        warnings.append("%s requires a Health component for which to apply damage. Please add one in the inspector." % name)
-    return warnings
+	var warnings := PackedStringArray([])
+	if not health is Health:
+		warnings.append("%s requires a Health component for which to apply damage. Please add one in the inspector." % name)
+	return warnings
 
 
 func _on_area_entered(hitbox: Hitbox) -> void:
-    if not hitbox is Hitbox: 
-        return
-    print('Hurt box entered')
-    collison.call_deferred('set', 'disabled', true)
-    timer.start()
-    emit_signal("damage", hitbox.damage)
-    if health:
-        health.damage(hitbox.damage)
+	if not hitbox is Hitbox: 
+		return
+	print('Hurt box entered')
+	collison.call_deferred('set', 'disabled', true)
+	timer.start()
+	emit_signal("damage", hitbox.damage)
+	if health:
+		health.damage(hitbox.damage)
 
 
 func _on_i_frames_timer_timeout() -> void:
-    collison.call_deferred('set', 'disabled', false)
+	collison.call_deferred('set', 'disabled', false)
 

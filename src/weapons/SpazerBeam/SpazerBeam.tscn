@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_u5bmo"]
 radius = 4.0
 
-[node name="PhaserBeam" type="Area2D"]
+[node name="SpazerBeam" type="Area2D"]
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_21lri")
@@ -22,14 +22,15 @@ vframes = 15
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="CollisionCounter" parent="." instance=ExtResource("3_7ass3")]
-collision_mask = 128
-
 [node name="HitBox" parent="." instance=ExtResource("4_u0icl")]
 collision_layer = 32
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_u5bmo")
+
+[node name="CollisionCounter" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("3_7ass3")]
+hitbox = NodePath("../HitBox")
+collision_mask = 128
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 
