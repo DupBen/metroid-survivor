@@ -5,7 +5,7 @@ extends Node2D
 
 @onready var beam = preload("res://src/weapons/Beam/Beam.tscn")
 @onready var timer = $Timer
-@onready var samus = Globals.Samus
+@onready var samus = Globals.Player
 
 func _ready() -> void:
 	timer.wait_time = fire_rate

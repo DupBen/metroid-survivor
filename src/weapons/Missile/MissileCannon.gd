@@ -20,11 +20,8 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var missileNode = missile.instantiate()
-	var samus = get_parent()
-	if not samus:
-		return
-	missileNode.direction = samus.face_direction
-	missileNode.global_position = samus.global_position
+	missileNode.direction = Globals.Player.face_direction
+	missileNode.global_position = Globals.Player.global_position
 
 	if enemies_in_range.size() > 0:
 		#If enemy in range target the first one

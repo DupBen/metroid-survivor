@@ -11,7 +11,7 @@ var GameSFX
 var GameState
 var GameplayUI
 var UI
-var Samus
+var Player
 
 #var _loader
 #var _main_scene

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv0hb2ecqufkf"]
+[gd_scene load_steps=15 format=3 uid="uid://bv0hb2ecqufkf"]
 
 [ext_resource type="Script" path="res://src/character/samus/Samus.gd" id="1_hn77h"]
 [ext_resource type="Texture2D" uid="uid://b57bsssb2tofc" path="res://src/assets/zm_power_suit.png" id="2_ugpua"]

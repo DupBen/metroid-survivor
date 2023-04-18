@@ -11,7 +11,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	for weapon in weapons:
-		print("Weapon: ", weapon)
+		pass
+		#print("Weapon: ", weapon)
 
 
 func add_weapon(weapon) -> void:
