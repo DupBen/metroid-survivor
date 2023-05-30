@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ylbrk7wadf54"]
+
+[ext_resource type="Script" path="res://src/UI/Interface/Interface.gd" id="1_gh3f3"]
+[ext_resource type="PackedScene" uid="uid://dmn2g3ic1idev" path="res://src/UI/Interface/Health/health.tscn" id="2_fpy4y"]
+
+[sub_resource type="SystemFont" id="SystemFont_4anv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_huoen"]
+line_spacing = 1.0
+font = SubResource("SystemFont_4anv8")
+font_size = 10
+shadow_size = 0
+
+[node name="Interface" type="CanvasLayer"]
+script = ExtResource("1_gh3f3")
+
+[node name="Health" parent="." instance=ExtResource("2_fpy4y")]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 56.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 7.0
+offset_top = 23.0
+offset_right = 56.0
+offset_bottom = 38.0
+
+[node name="EnergyLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Energy"
+label_settings = SubResource("LabelSettings_huoen")
+
+[node name="EnergyValue" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "09"
+label_settings = SubResource("LabelSettings_huoen")
