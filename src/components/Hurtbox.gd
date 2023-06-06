@@ -2,7 +2,6 @@
 class_name Hurtbox
 extends Area2D
 
-
 signal damage(amount)
 
 @export var health : Health

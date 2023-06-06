@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmn2g3ic1idev"]
+
+[ext_resource type="Script" path="res://src/UI/Interface/Health/HealthUI.gd" id="1_rmsyn"]
+[ext_resource type="PackedScene" uid="uid://dh4tyadpf2otv" path="res://src/UI/Interface/Health/HealthBox/health_box.tscn" id="2_hie2a"]
+
+[sub_resource type="SystemFont" id="SystemFont_4anv8"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1b1tq"]
+line_spacing = 1.0
+font = SubResource("SystemFont_4anv8")
+font_size = 10
+shadow_size = 0
+
+[node name="CenterContainer" type="CenterContainer"]
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Health" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("1_rmsyn")
+total_health = 297
+current_health = 382
+health_per_block = 100
+
+[node name="HealthBlocks" type="HBoxContainer" parent="Health"]
+layout_mode = 2
+
+[node name="HealthBox" parent="Health/HealthBlocks" instance=ExtResource("2_hie2a")]
+custom_minimum_size = Vector2(2.08165e-12, 18)
+layout_mode = 2
+
+[node name="HealthLabel" type="HBoxContainer" parent="Health"]
+layout_mode = 2
+
+[node name="EnergyLabel" type="Label" parent="Health/HealthLabel"]
+layout_mode = 2
+text = "Energy"
+label_settings = SubResource("LabelSettings_1b1tq")
+
+[node name="EnergyValue" type="Label" parent="Health/HealthLabel"]
+layout_mode = 2
+text = "09"
+label_settings = SubResource("LabelSettings_1b1tq")
