@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb3h58gv0l111"]
+[gd_scene load_steps=7 format=3 uid="uid://cb3h58gv0l111"]
 
 [ext_resource type="PackedScene" uid="uid://bv0hb2ecqufkf" path="res://src/character/samus/Samus.tscn" id="2_xw62k"]
 [ext_resource type="PackedScene" uid="uid://d1kvlxysnug7o" path="res://src/spawner/Spawner.tscn" id="3_hivkg"]
 [ext_resource type="Texture2D" uid="uid://c8uv5uf3idvhi" path="res://src/assets/E9fTT7.png" id="4_6ff3p"]
+[ext_resource type="PackedScene" uid="uid://ylbrk7wadf54" path="res://src/UI/Interface/Interface.tscn" id="4_acipb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ld07"]
 texture = ExtResource("4_6ff3p")
@@ -662,3 +663,5 @@ layer_0/tile_data = PackedInt32Array(-20, 1703936, 10, 65516, 1703936, 10, 13105
 [node name="SamusCamera2D" type="Camera2D" parent="Samus"]
 
 [node name="Spawner" parent="." instance=ExtResource("3_hivkg")]
+
+[node name="Interface" parent="." instance=ExtResource("4_acipb")]
