@@ -19,9 +19,6 @@ offset_bottom = 20.0
 [node name="Health" type="VBoxContainer" parent="."]
 layout_mode = 2
 script = ExtResource("1_rmsyn")
-total_health = 297
-current_health = 382
-health_per_block = 100
 
 [node name="HealthBlocks" type="HBoxContainer" parent="Health"]
 layout_mode = 2

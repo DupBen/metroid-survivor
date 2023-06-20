@@ -5,6 +5,7 @@ extends CharacterBody2D
 const SPEED := 50.0
 
 @export var armor := 5
+@export var health := 99
 
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var hurtbox := $Hurtbox as Hurtbox
@@ -30,12 +31,14 @@ func _ready() -> void:
 #	const grapple_beam_launcher = preload("res://src/weapons/GrappleBeam/GrappleBeamLauncher.tscn")
 	armory.add_weapon(spazer_beam_cannon)
 	Events.levelled_up.connect(_on_levelled_up)
+	_instantiate_health()
 
 
 func _physics_process(_delta: float) -> void:
 	move()
 	handle_animation()
-#	print($Health.health)
+	health = $Health.health
+	Events.emit_signal("health_change", health)
 
 func _on_levelled_up(level: int)-> void:
 	print("Level: ", level)
@@ -74,3 +77,12 @@ func check_face_direction(input_direction) -> void:
 
 func fire():
 	pass
+
+func get_health() -> int:
+	return health
+
+func _instantiate_health():
+	print('instantiating samus health: ', health)
+	$Health.health = health
+	print('Samus.gd:InstantiateHealth::calling total health change:', health)
+	Events.emit_signal("total_health_change", self, health)

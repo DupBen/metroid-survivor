@@ -28,7 +28,6 @@ func _get_configuration_warnings():
 func _on_area_entered(hitbox: Hitbox) -> void:
 	if not hitbox is Hitbox: 
 		return
-	print('Hurt box entered')
 	collison.call_deferred('set', 'disabled', true)
 	timer.start()
 	emit_signal("damage", hitbox.damage)

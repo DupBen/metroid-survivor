@@ -113,9 +113,10 @@ shape = SubResource("CircleShape2D_5ota4")
 visible = false
 health = 100
 
-[node name="Hurtbox" parent="." instance=ExtResource("3_pshqb")]
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_pshqb")]
 visible = false
 collision_mask = 64
+health = NodePath("../Health")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CircleShape2D_ai536")

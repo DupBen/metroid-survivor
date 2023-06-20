@@ -11,6 +11,6 @@ signal player_health(health)
 func damage(amount: int) -> void:
 	print('taking damage')
 	health -= amount
-	emit_signal("player_health", health)
+
 	if health <= 0:
 		emit_signal("died")

@@ -9,11 +9,7 @@ signal max_collisions_reached
 @export_flags_2d_physics var collision_mask
 
 func _ready():
-	print('collision counter ready')
-	print('hitbox ', hitbox)
-
 	if hitbox is Hitbox:
-		print('has hitbox')
 		hitbox.area_entered.connect(_on_hitbox_area_entered)
 		hitbox.collision_mask += collision_mask
 
